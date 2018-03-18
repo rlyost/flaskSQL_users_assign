@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Users</title>
+  <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='users.css')}}">
+</head>
+<body>
+
+  <!-- we can use the line below to see all of our data in our template
+                        {{ all_friends }} -->
+
+<h1>Users</h1>
+<!-- with all the data we can then construct a more structured output -->
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Created At</th>
+        <th>Actions</th>
+    </tr>
+    {% for friend in all_friends: %}
+        <tr>
+            <td>{{ friend['id'] }}</td>
+            <td>{{ friend['first_name'] }} {{ friend['last_name'] }}</td>
+            <td>{{ friend['email'] }}</td>
+            <td>{{ friend['created_at'].strftime('%b %d, %Y') }}</td>
+            <td>
+                <a href="/users/{{ friend['id'] }}" class="options">Show</a>
+                <a href="/users/{{ friend['id'] }}/edit" class="options">Edit</a>
+                <a href="/users/{{ friend['id'] }}/destroy" class="options">Delete</a>
+            </td>
+        </tr>
+    {% endfor %}
+    <tr>
+        <td class='tbl_bot'></td>
+        <td class='tbl_bot'></td>
+        <td class='tbl_bot'></td>
+        <td class='tbl_bot'></td>
+    </tr>
+
+</table>
+  <p><a href="/users/new" class="options">Add a new user</a></p>
+</body>
+</html>

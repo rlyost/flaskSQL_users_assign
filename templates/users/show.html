@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Show User</title>
+  <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='users.css')}}">
+</head>
+<body>
+    <h1>User {{ friend[0]['id'] }}</h1>
+    <p>Full Name: {{ friend[0]['first_name'] }} {{ friend[0]['last_name'] }}</p>
+    <p>Email: {{ friend[0]['email'] }}</p>
+    <p>Created At: {{ friend[0]['created_at'].strftime('%b %d, %Y') }}</p>
+    <p class="options"><a href="/users/{{ friend[0]['id'] }}/edit" class="options">Edit</a> | <a href="/users/{{ friend[0]['id'] }}/destroy" class="options">Delete</a></p>
+    <p><a href="/" class="options">Go Back</a></p>
+</body>
+</html>

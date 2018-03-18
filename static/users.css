@@ -1,0 +1,33 @@
+table {
+    border: 2px solid black;
+}
+th {
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    /* border-right: 1px solid black; */
+    margin: 0 5px 0 5px;
+    padding: 3px 5px;
+
+}
+td {
+    border-left: 2px solid black;
+    /* border-right: 1px solid black; */
+    margin: 0 5px 0 5px;
+    padding: 3px 5px;
+}
+label {
+    margin: 5px 5px 10px 10px;
+    display: block;
+}
+input {
+    margin: 0px 0px 0px 20px;
+}
+p {
+    margin: 10px 30px;
+}
+a {
+    margin: 25px 15px;
+}
+.options {
+    margin: 30px 15px;
+}

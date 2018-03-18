@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Full Friends</title>
+  <link rel='stylesheet' type='text/css' href="{{ url_for('static', filename='users.css')}}">
+</head>
+<body>
+    <h1>Edit User {{ friend[0]['id'] }}</h1>
+    <form action='/update' method='POST'>
+        <label for="first_name">First Name:<input type="text" name="first_name" id="first_name" value="{{ friend[0]['first_name'] }}"></label>
+        <label for="last_name">Last Name:<input type="text" name="last_name" id="last_name"  value="{{ friend[0]['last_name'] }}"></label>
+        <label for="email">Email:<input type="text" name="email" id="email" value="{{ friend[0]['email'] }}"></label>
+        <label for="id"><input type="hidden" name="id" id="id" value="{{ friend[0]['id'] }}"></label>
+        <input type="submit" value="Update">
+    </form>
+    <p><a href="/users/{{ friend[0]['id'] }}" class="options">Show</a> | <a href="/" class="options">Go Back</a></p>
+</body>
+</html>
